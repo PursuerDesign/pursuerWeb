@@ -18,35 +18,55 @@
   .list1{
     height: 100%;
     margin: 0 auto;
-    padding: 20% 0;
     background-color: $blue;
+    vertical-align: middle;
+    .text{
+      height: 180px;
+      position: absolute;
+      left: 50%;
+      top:50%;
+      margin-top:-90px;
+      margin-left: -119px;
+    }
+
     h1,h2,p{color:$white;
       text-align: center;
     }
   }
-  .list2{
+  .list2,.list3{
     height: 100%;
     margin: 0 auto;
     padding: 20% 0;
-    background:url("../images/assets/fullimage1.jpg") no-repeat;
-    background-size: cover;
     overflow: hidden;
+  }
+  .list2{
+    @media (max-width: $screen-xs-max) {
+      background:url("../images/banner/damanguan-phone.jpg") no-repeat center center;
+      background-size: cover;
+    }
+    @media (min-width: $screen-sm-min) {
+      background:url("../images/banner/damanguan-pad.jpg") no-repeat center center;
+      background-size: cover;
+    }
+    @media (min-width: $screen-md-min) {
+      background:url("../images/banner/damanguan-pc.jpg") no-repeat center center;
+      background-size: cover;
+    }
+
   }
   .list3{
-    height: 100%;
-    margin: 0 auto;
-    padding: 20% 0;
-    background:url("../images/assets/fullimage2.jpg") no-repeat;
-    background-size: cover;
-    overflow: hidden;
-  }
-  .list4{
-    height: 100%;
-    margin: 0 auto;
-    padding: 20% 0;
-    background:url("../images/assets/fullimage3.jpg") no-repeat;
-    background-size: cover;
-    overflow: hidden;
+    @media (max-width: $screen-xs-max) {
+      background:url("../images/banner/natong-phone.jpg") no-repeat center center;
+      background-size: cover;
+    }
+    @media (min-width: $screen-sm-min) {
+      background:url("../images/banner/natong-pad.jpg") no-repeat center center;
+      background-size: cover;
+    }
+    @media (min-width: $screen-md-min) {
+      background:url("../images/banner/natong-pc.jpg") no-repeat center center;
+      background-size: cover;
+    }
   }
 }
 #banner .item img{
