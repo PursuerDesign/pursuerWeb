@@ -9,6 +9,18 @@
           width: 25%;
           float:left;
           text-align: center;
+          a{
+            display: block;
+            height: 60px;
+            width: 60px;
+            margin: 0 auto;
+            &:hover{
+              >p:only-of-type{
+                opacity: 1;
+              }
+            }
+          }
+          p{color: $blue;}
         }
       }
       @media (min-width: $screen-sm-min) {
@@ -16,7 +28,20 @@
         .cont1,.cont2,.cont3,.cont4{
           width: 25%;
           float:left;
+          a{
+            display: block;
+            height: 60px;
+            width: 60px;
+            margin: 0 auto;
+            &:hover{
+              >p:only-of-type{
+                opacity: 1;
+              }
+            }
+          }
           text-align: center;
+          p{color: $blue;}
+
         }
       }
     }
@@ -41,6 +66,14 @@
     &:hover{color: $blue;
       border:1px solid $blue;
     }
+  }
+  .text1,.text2,.text3,.text4{
+    opacity: 0;
+  }
+  .iconfont-weibo:hover{
+      &:target{
+        opacity: 1;
+      }
   }
   .foot-detail{
     text-align: center;

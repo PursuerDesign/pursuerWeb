@@ -1,6 +1,5 @@
 .header{
   position: relative;
-  transition: 1s;
 }
 .logo1{
   color:$white;
@@ -38,24 +37,27 @@
 .navbar-default {
   background:none;
   @media (max-width: $screen-xs-max) {
-    background-color: $blue;
+    background-color: transparent;
     .navbar-nav {
+      background-color: $white;
       > li > a {
         text-align: center;
-        color: $navbar-default-link-color;
+        color: $black;
         &:hover,
         &:focus {
-          color: $blue;
-          background:$white;
+          color: $white;
+          background:$blue;
           border-bottom: none;
         }
       }
       > .active > a {
-        &,
+        border-left: 6px solid $blue;
+        background-color: $white;
+        color: $blue;
         &:hover,
         &:focus {
-          color: $blue;
-          background:$white;
+          color: $white;
+          background:$blue;
           border-bottom: none;
         }
       }
@@ -122,8 +124,7 @@
     .navbar-nav {
       > li > a {
         text-align: center;
-        color: $blue;
-        background:$white;
+        color: $black;
         &:hover,
         &:focus {
           color: $white;
@@ -132,7 +133,9 @@
         }
       }
       > .active > a {
-        &,
+        border-left: 6px solid $blue;
+        background-color: $white;
+        color: $blue;
         &:hover,
         &:focus {
           color: $white;
