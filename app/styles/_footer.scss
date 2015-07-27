@@ -20,7 +20,7 @@
               }
             }
           }
-          p{color: $blue;}
+          p{color: $blue;margin-bottom: 0;}
         }
       }
       @media (min-width: $screen-sm-min) {
@@ -80,6 +80,31 @@
     background-color: $deepblack;
     color: $white;
     padding: 0.5em 0;
+  }
+  .cont3{
+    >a{
+      &:hover{
+        .qrcode{
+          opacity: 1.0;
+        }
+      }
+    }
+  }
+  .qrcode{
+    display: inline-block;
+    position: relative;
+    top:0;
+    left: -15px;
+    z-index: 10;
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-out;
+    -webkit-transition-delay: .2s;
+    transition-delay: .2s;
   }
 }
 
