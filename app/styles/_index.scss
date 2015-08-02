@@ -21,6 +21,8 @@
   }
   p{margin: 0;}
   .icon-app,.icon-ind,.icon-web,.icon-brand{
+    text-align: center;
+    margin: 0 auto;
     @media (min-width: $screen-sm-min) {
       width: 120px;
       height: 120px;
