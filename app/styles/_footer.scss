@@ -59,12 +59,21 @@
   margin-bottom: -60px;
   .iconfont-weibo,.iconfont-qq,.iconfont-weixin,.iconfont-huaban{
     color:$black;
-    font-size: 60px;
-    line-height: 60px;
+    height: 60px;
+    width: 60px;
+    display: inline-block;
     border:1px solid $black;
+    .iconfont{
+      color: $black;
+      line-height: 60px;
+      font-size: 60px;
+    }
     border-radius: 60px;
-    &:hover{color: $blue;
+    &:hover{
       border:1px solid $blue;
+      .iconfont{
+        color: $blue;
+      }
     }
   }
   .text1,.text2,.text3,.text4{
