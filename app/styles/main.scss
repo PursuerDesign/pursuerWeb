@@ -16,6 +16,11 @@ html,body{font-family: "Arial","STXihei","Microsoft YaHei"; line-height:1.5em;
   width: 100%;
 }
 *{margin: 0; padding: 0;outline: none;
+  -webkit-transition: 1s time;
+  -moz-transition: 1s time;
+  -ms-transition: 1s time;
+  -o-transition: 1s time;
+  transition: 1s time;
 }
 a{background:none;}
 b,i,span{font-style: normal;}
