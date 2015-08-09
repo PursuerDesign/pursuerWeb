@@ -12,10 +12,10 @@
     padding: 0 45px;
   }
   .navbar-brand{
-    height:46px;
-    width: 166px;
-    margin: 17px 15px;
-    background:url("../images/public/logo1.png") top left no-repeat;
+    height:40px;
+    width: 146px;
+    margin: 15px 15px;
+    background:url("../images/public/logo1.png") center center no-repeat;
     background-size: cover;
   }
 }
@@ -26,7 +26,7 @@
   > li > a {
     padding:0 20px;
     @media (min-width: $screen-sm-min) {
-      line-height: 80px;
+      line-height: 70px;
     }
     @media (max-width: $screen-xs-max) {
       line-height: 50px;
@@ -39,26 +39,27 @@
   @media (max-width: $screen-xs-max) {
     background-color: transparent;
     .navbar-nav {
-      background-color: $white;
+      top: 100px;
+      height: 60%;
+      position: relative;
       > li > a {
+        font-size: 40px;
+        line-height: 70px;
         text-align: center;
-        color: $black;
+        color: $opacityWhite;
         &:hover,
         &:focus {
+          background:none;
           color: $white;
-          background:$blue;
-          border-bottom: none;
         }
       }
       > .active > a {
-        border-left: 6px solid $blue;
-        background-color: $white;
-        color: $blue;
+        color: $white;
+        background:none;
         &:hover,
         &:focus {
+          background:none;
           color: $white;
-          background:$blue;
-          border-bottom: none;
         }
       }
     }
@@ -93,21 +94,11 @@
   }
   border:none;
 
-
-  .navbar-toggle {
-    margin-top:20px!important;
-    border-color: $navbar-default-toggle-border-color;
-    &:hover,
-    &:focus {
-      background-color: $navbar-default-toggle-hover-bg;
-      border-color:$navbar-default-toggle-hover-border-color;
-      .icon-bar{
-        background-color: $navbar-default-toggle-icon-bar-hover-bg;
-
+  .nav-toggle{
+    span{
+      &,&:before,&:after{
+        background: #fff;
       }
-    }
-    .icon-bar {
-      background-color: $navbar-default-toggle-icon-bar-bg;
     }
   }
 
@@ -119,34 +110,36 @@
 // Default navbar
 .navbar-default-blue {
   background:white;
+  box-shadow: 0 5px 1em rgba(0,0,0,0.5);
   @media (max-width: $screen-xs-max) {
     background-color: $white;
     .navbar-nav {
+      top: 100px;
+      height: 60%;
+      position: relative;
       > li > a {
+        font-size: 40px;
+        line-height: 70px;
         text-align: center;
-        color: $black;
+        color: $opacityWhite;
         &:hover,
         &:focus {
+          background:none;
           color: $white;
-          background:$blue;
-          border-bottom: none;
         }
       }
       > .active > a {
-        border-left: 6px solid $blue;
-        background-color: $white;
-        color: $blue;
+        color: $white;
+        background:none;
         &:hover,
         &:focus {
+          background:none;
           color: $white;
-          background:$blue;
-          border-bottom: none;
         }
       }
     }
   }
   @media (min-width: $screen-sm-min) {
-    box-shadow: 0 5px 1em rgba(0,0,0,0.5);
     .navbar-nav {
       > li > a {
         color: $navbar-default-blue-link-color;
@@ -168,120 +161,88 @@
     }
   }
   border:none;
-
-
-  .navbar-toggle {
-    margin-top:20px;
-    border-color: $navbar-default-blue-toggle-border-color;
-    &:hover,
-    &:focus {
-      background-color: $navbar-default-blue-toggle-hover-bg;
-      border-color:$navbar-default-blue-toggle-hover-border-color;
-      .icon-bar{
-        background-color: $navbar-default-blue-toggle-icon-bar-hover-bg;
-
-      }
-    }
-    .icon-bar {
-      background-color: $navbar-default-blue-toggle-icon-bar-bg;
-    }
-  }
-
   .navbar-collapse,
   .navbar-form {
     border:none;
   }
 
-  // Dropdown menu items
-  .navbar-nav {
-    // Remove background color from open dropdown
-    > .open > a {
-      &,
-      &:hover,
-      &:focus {
-        background-color: $navbar-default-link-active-bg;
-        color: $navbar-default-link-active-color;
-      }
-    }
-
-    @media (max-width: $grid-float-breakpoint-max) {
-      // Dropdowns get custom display when collapsed
-      .open .dropdown-menu {
-        > li > a {
-          color: $navbar-default-blue-link-color;
-          &:hover,
-          &:focus {
-            color: $navbar-default-blue-link-hover-color;
-            background-color: $navbar-default-blue-link-hover-bg;
-          }
-        }
-        > .active > a {
-          &,
-          &:hover,
-          &:focus {
-            color: $navbar-default-blue-link-active-color;
-            background-color: $navbar-default-link-active-bg;
-          }
-        }
-        > .disabled > a {
-          &,
-          &:hover,
-          &:focus {
-            color: $navbar-default-link-disabled-color;
-            background-color: $navbar-default-link-disabled-bg;
-          }
-        }
+  .nav-toggle{
+    span{
+      &,&:before,&:after{
+        background: $blue;
       }
     }
   }
 }
 .navbar-collapse{
   position: relative;
+  max-height: 100%!important;
+  @media (max-width: $screen-xs-max) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2,84,153,0.8);
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+    transition: opacity 0.5s, visibility 0s 0.5s;
+    &.in{
+      visibility: visible;
+      opacity: 1;
+      -webkit-transition: opacity 0.5s;
+      transition: opacity 0.5s;
+      z-index: 1002;
+    }
+  }
 }
 .nav-toggle {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 999999;
-  padding: 10px 35px 16px 0;
-  cursor: pointer;
-  span{
-    &,&:before,&:after{
-      content: '';
-      position: absolute;
-      display: block;
-      width: 35px;
-      height: 5px;
-      border-radius: 1px;
-      background: #fff;
-      cursor: pointer;
-      -webkit-transition: all 300ms ease-in-out;
-      transition: all 300ms ease-in-out;
-    }
-    &:before{
-      top:-10px;
-    }
-    &:after{
-      bottom:-10px;
-    }
-  }
-  &.active{
+  @media (max-width: $screen-xs-max) {
+    position: absolute;
+    top: 26px;
+    right: 15px;
+    z-index: 999999;
+    padding: 10px 35px 16px 0;
+    cursor: pointer;
     span{
-      background-color: transparent;
+      &,&:before,&:after{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 35px;
+        height: 5px;
+        border-radius: 1px;
+        cursor: pointer;
+        -webkit-transition: all 300ms ease-in-out;
+        transition: all 300ms ease-in-out;
+      }
       &:before{
-        top:0;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
+        top:-10px;
       }
       &:after{
-        top: 10px;
-        -webkit-transform: translateY(-10px) rotate(-45deg);
-        -ms-transform: translateY(-10px) rotate(-45deg);
-        transform: translateY(-10px) rotate(-45deg);
+        bottom:-10px;
+      }
+    }
+    &.active{
+      span{
+        background-color: transparent;
+        &:before{
+          top:0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+        &:after{
+          top: 10px;
+          -webkit-transform: translateY(-10px) rotate(-45deg);
+          -ms-transform: translateY(-10px) rotate(-45deg);
+          transform: translateY(-10px) rotate(-45deg);
+        }
       }
     }
   }
+
 }
 //marker
 .marker{
