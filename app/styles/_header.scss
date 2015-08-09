@@ -146,6 +146,7 @@
     }
   }
   @media (min-width: $screen-sm-min) {
+    box-shadow: 0 5px 1em rgba(0,0,0,0.5);
     .navbar-nav {
       > li > a {
         color: $navbar-default-blue-link-color;
