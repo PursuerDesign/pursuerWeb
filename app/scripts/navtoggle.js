@@ -5,14 +5,14 @@ $(".nav-toggle").click(function() {
   $(".overlay-boxify").toggleClass("open");
 });
 
-/* When user clicks a link */
-$(".overlay ul li a").click(function() {
-  $(".nav-toggle").toggleClass("active");
-  $(".overlay-boxify").toggleClass("open");
-});
+///* When user clicks a link */
+//$(".navbar-nav li a").click(function() {
+//  $(".nav-toggle").toggleClass("active");
+//  $(".navbar-collapse").toggleClass("in");
+//});
 
 /* When user clicks outside */
-$(".overlay").click(function() {
+$(".navbar-collapse").click(function() {
   $(".nav-toggle").toggleClass("active");
-  $(".overlay-boxify").toggleClass("open");
+  $(".navbar-collapse").toggleClass("in");
 });
